@@ -5,6 +5,10 @@
 // Highlights main features + weather search.
 // --------------------------------------------------------------
 
+// Store user info if logged in
+$user_id = $_SESSION['user_id'] ?? null;
+$user_role = $_SESSION['role'] ?? null;
+
 // Include shared components
 $activePage = 'home';       // For navbar active state
 include "includes/navbar.php";
@@ -35,6 +39,8 @@ include "includes/navbar.php";
         padding: 20px;
         background: #f2fff5;
     }
+    /* Fixed navbar */
+    nav.navbar { position: fixed; top: 0; width: 100%; z-index: 1030; }
 </style>
 
 

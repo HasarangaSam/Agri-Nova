@@ -141,7 +141,7 @@ $userLoggedIn = isset($_SESSION['user_id']);
                 <?php if (!$userLoggedIn) : ?>
                     <!-- Guest (Not Logged In) -->
                     <li class="nav-item">
-                        <a class="btn btn-primary ms-3" href="signup.php">Login / Signup</a>
+                        <a class="btn btn-primary ms-3" href="login.php">Login / Signup</a>
                     </li>
                 <?php else : ?>
                     <!-- Logged-in User: Show Profile Avatar -->

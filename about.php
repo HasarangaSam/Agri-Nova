@@ -4,6 +4,10 @@
 // General public page, no session check needed.
 // --------------------------------------------------------------
 
+// Store user info if logged in
+$user_id = $_SESSION['user_id'] ?? null;
+$user_role = $_SESSION['role'] ?? null;
+
 $activePage = "about";   // highlight navbar tab
 
 // Include Navbar
@@ -23,6 +27,8 @@ include "includes/navbar.php";
         rel="stylesheet">
 
     <style>
+        /* Fixed navbar */
+        nav.navbar { position: fixed; top: 0; width: 100%; z-index: 1030; }
         .about-hero {
             background: linear-gradient(rgba(0, 80, 0, 0.6), rgba(0, 80, 0, 0.6)),
                         url('assets/about_bg.jpg') center/cover no-repeat;
