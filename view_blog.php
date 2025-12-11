@@ -126,8 +126,8 @@ include "includes/navbar.php";
     </div>
 
     <!-- Blog Image -->
-    <?php if (!empty($blog['image']) && file_exists('assets/images/blogs/'.$blog['image'])): ?>
-        <img src="assets/images/blogs/<?= htmlspecialchars($blog['image']) ?>" alt="Blog Image" class="blog-img">
+    <?php if (!empty($blog['image']) && file_exists('uploads/images/blogs/'.$blog['image'])): ?>
+        <img src="uploads/images/blogs/<?= htmlspecialchars($blog['image']) ?>" alt="Blog Image" class="blog-img">
     <?php endif; ?>
 
     <!-- Blog Content -->

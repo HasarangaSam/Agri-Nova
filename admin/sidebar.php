@@ -149,7 +149,7 @@ $activePage = $activePage ?? '';
         <li><a href="manage_announcements.php" class="nav-link <?= ($activePage==='announcements')?'active':'' ?>">Manage Announcements</a></li>
         <li><a href="view_field_visits.php" class="nav-link <?= ($activePage==='field_visits')?'active':'' ?>">Field Visit Requests</a></li>
         <li><a href="asked_questions.php" class="nav-link <?= ($activePage==='asked_questions')?'active':'' ?>">Asked Questions</a></li>
-        <li><a href="contact_messages.php" class="nav-link <?= ($activePage==='contacts')?'active':'' ?>">Contact Us</a></li>
+        <li><a href="manage_contact_messages.php" class="nav-link <?= ($activePage==='contacts')?'active':'' ?>">Contact Us</a></li>
 
         <!-- AI Model Section -->
         <div class="section-title">AI Model</div>

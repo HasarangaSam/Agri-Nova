@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ---- Image Upload ----
     if (!empty($_FILES['image']['name'])) {
 
-        $targetDir = "../assets/images/blogs/";
+        $targetDir = "../uploads/images/blogs/";
         if (!is_dir($targetDir)) {
             mkdir($targetDir, 0777, true);
         }

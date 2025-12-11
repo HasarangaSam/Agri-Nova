@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $author_id   = $_SESSION['user_id'];
 
     $imageName = $blog['image']; // default: keep existing image
-    $targetDir = "../assets/images/blogs/";
+    $targetDir = "../uploads/images/blogs/";
 
     // ---- Image Upload ----
     if (isset($_FILES['image']) && $_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE) {
@@ -180,7 +180,7 @@ body { margin-left:250px; background:#f8f9fa; }
             <!-- Current Image -->
             <?php if (!empty($blog['image'])): ?>
                 <label class="form-label">Current Image</label><br>
-                <img src="../assets/images/blogs/<?= htmlspecialchars($blog['image']); ?>" class="current-image"><br>
+                <img src="../uploads/images/blogs/<?= htmlspecialchars($blog['image']); ?>" class="current-image"><br>
             <?php endif; ?>
 
             <!-- Upload New Image -->

@@ -125,7 +125,7 @@ $userLoggedIn = isset($_SESSION['user_id']);
 
                 <!-- Agri Officer Portal -->
                 <li class="nav-item">
-                    <a class="nav-link <?= ($activePage === 'officer') ? 'active' : '' ?>" href="officer_login.php">
+                    <a class="nav-link <?= ($activePage === 'officer') ? 'active' : '' ?>" href="officer_portal.php">
                         Agri Officer Portal
                     </a>
                 </li>

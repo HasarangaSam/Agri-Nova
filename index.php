@@ -5,6 +5,8 @@
 // Highlights main features + weather search.
 // --------------------------------------------------------------
 
+session_start();
+
 // Store user info if logged in
 $user_id = $_SESSION['user_id'] ?? null;
 $user_role = $_SESSION['role'] ?? null;

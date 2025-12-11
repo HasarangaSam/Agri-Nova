@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email']);
     $birth = $_POST['birthdate'] ?? null;
     $gender = $_POST['gender'] ?? null;
-    $district = $_POST['district'] ?? null;
+    $district_id = $_POST['district_id'] ?? null; // updated to district_id
     $address = trim($_POST['address']);
     $phone = trim($_POST['contact_number']);
     $password = $_POST['password'];
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // ----------------------------
     $sql = $conn->prepare("
         INSERT INTO farmers (
-            first_name, last_name, email, birthdate, gender, district,
+            first_name, last_name, email, birthdate, gender, district_id,
             address, contact_number, password
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
@@ -69,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $sql->bind_param(
-        "sssssssss",
-        $first, $last, $email, $birth, $gender, $district,
+        "sssssiiss", // updated types: i = integer for district_id
+        $first, $last, $email, $birth, $gender, $district_id,
         $address, $phone, $password_hash
     );
 

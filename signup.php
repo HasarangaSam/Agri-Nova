@@ -7,6 +7,16 @@
 
 $activePage = "signup";
 include "includes/navbar.php";
+require "includes/db.php"; // DB needed to fetch districts
+
+// Fetch all districts from the database
+$districtQuery = $conn->query("SELECT district_id, district_name FROM districts ORDER BY district_name ASC");
+$districts = [];
+if ($districtQuery->num_rows > 0) {
+    while ($row = $districtQuery->fetch_assoc()) {
+        $districts[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,19 +94,12 @@ include "includes/navbar.php";
 
                 <!-- DISTRICT DROPDOWN -->
                 <div class="col-md-12">
-                    <label class="form-label">District</label>
-                    <select name="district" class="form-select">
+                    <label class="form-label">District *</label>
+                    <select name="district_id" class="form-select" required>
                         <option value="">Select District</option>
                         <?php
-                            $districts = [
-                                "Colombo","Gampaha","Kalutara","Kandy","Matale","Nuwara Eliya",
-                                "Galle","Matara","Hambantota","Jaffna","Kilinochchi","Mannar",
-                                "Vavuniya","Mullaitivu","Batticaloa","Ampara","Trincomalee",
-                                "Kurunegala","Puttalam","Anuradhapura","Polonnaruwa","Badulla",
-                                "Monaragala","Ratnapura","Kegalle"
-                            ];
-                            foreach($districts as $d){
-                                echo "<option value='$d'>$d</option>";
+                            foreach ($districts as $d) {
+                                echo "<option value='{$d['district_id']}'>" . htmlspecialchars($d['district_name']) . "</option>";
                             }
                         ?>
                     </select>

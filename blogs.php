@@ -102,8 +102,8 @@ $result = $stmt->get_result();
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class="col-md-6">
                     <div class="card shadow-sm blog-card">
-                        <?php if (!empty($row['image']) && file_exists('assets/images/blogs/'.$row['image'])): ?>
-                            <img src="assets/images/blogs/<?= htmlspecialchars($row['image']) ?>" alt="Blog Image" class="blog-img">
+                        <?php if (!empty($row['image']) && file_exists('uploads/images/blogs/'.$row['image'])): ?>
+                            <img src="uploads/images/blogs/<?= htmlspecialchars($row['image']) ?>" alt="Blog Image" class="blog-img">
                         <?php endif; ?>
                         <div class="blog-content">
                             <div class="blog-title">

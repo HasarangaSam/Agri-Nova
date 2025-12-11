@@ -3,7 +3,7 @@
 // AGRINOVA - ABOUT PAGE
 // General public page, no session check needed.
 // --------------------------------------------------------------
-
+session_start();
 // Store user info if logged in
 $user_id = $_SESSION['user_id'] ?? null;
 $user_role = $_SESSION['role'] ?? null;
